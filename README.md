@@ -1,7 +1,7 @@
-## Robot Package Template
+## Raptor Robot V2
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+This is my attempt at a ros2 slam robot with voice commands and an AI backend.
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `raptor_bobot_v2` to whatever your project's name is.
+I plan to use https://github.com/hippo5329/linorobot2_hardware as an esp32 based start, using 7960's to control powered wheelchair motors. The rest should be "Standard ROS2 Packages" and this git is just the config of those packages.
 
 Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
