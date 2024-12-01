@@ -55,12 +55,12 @@
             </joint>
         </ros2_control>
     </xacro:if>
-
+<!-- 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <!-- <parameters>$(find articubot_one)/config/my_controllers.yaml</parameters>
-            <parameters>$(find articubot_one)/config/gaz_ros2_ctl_use_sim.yaml</parameters> -->
+            <parameters>$(find raptor_robot_v2)/config/my_controllers.yaml</parameters>
+            <parameters>$(find raptor_robot_v2)/config/gaz_ros2_ctl_use_sim.yaml</parameters>
         </plugin>
     </gazebo>
-
+ -->
 </robot>
