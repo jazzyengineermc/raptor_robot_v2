@@ -4,13 +4,13 @@
     <joint name="laser_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_frame"/>
-        <origin xyz="0.72 0 0.32" rpy="0 0 0"/>
+        <origin xyz="0.72 0 0.22" rpy="0 0 0"/>
     </joint>
 
     <link name="laser_frame">
         <visual>
             <geometry>
-                <box size="0.1 0.1 0.1"/>
+                <!-- <box size="0.1 0.1 0.1"/> -->
 				<meshfile name="rplidar.dae" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black"/>
