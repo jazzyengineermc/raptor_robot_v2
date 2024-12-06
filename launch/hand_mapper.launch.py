@@ -1,3 +1,8 @@
+#
+# ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_gyro:=true enable_accel:=true publish_tf:=true
+# ros2 launch realsense2_camera rs_launch.py config_file:="/full/path/to/config/file"  ---  config/rs435i_config.yaml
+#
+######################
 import os
 
 from ament_index_python.packages import get_package_share_directory
