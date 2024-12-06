@@ -11,7 +11,7 @@
         <visual>
             <geometry>
                 <!-- <box size="0.1 0.1 0.1"/> -->
-				<meshfile name="rplidar.dae" scale="0.001 0.001 0.001" />
+				<mesh filename="rplidar.dae" scale="0.001 0.001 0.001" />
             </geometry>
             <material name="black"/>
         </visual>
