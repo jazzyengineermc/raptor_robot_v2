@@ -8,13 +8,13 @@
 			</geometry>
 		</collision>
 
-		<vision>
-			<origin xyz="0 0 -0.03125" rpy="1.5707 0 0"/>
+		<visual>
+			<origin xyz="0 0 -0.03125" rpy="0 0 0"/>
 			<geometry>
 				<box size="0.1 0.1 0.1"/>
-				<meshfile name="package://BLAHPACKAGENAME/meshes/rplidar.dae" scale="0.001 0.001 0.001" />
+				<meshfile name="rplidar.dae" scale="0.001 0.001 0.001" />
 			</geometry>			
-		</vision>
+		</visual>
 
 		<inertial>
 			<mass value="1e-5"/>
@@ -26,7 +26,7 @@
 	<joint name="rplidar_joint" type="fixed">
 		<axis xyz="0 1 0"/>
 		<origin xyz="0 0 0.035" rpy="0 0 0 "/>
-		<parent link="plate_top_link"/>
+		<parent link="chassis_link"/>
 		<child link="rplidar_link"/>
 	</joint>
 
