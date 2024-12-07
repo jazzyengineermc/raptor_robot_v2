@@ -47,9 +47,12 @@ def generate_launch_description():
         arguments = ["0.0","0.0","0.0","0.0","0.0","0.0" ,"camera_imu_optical_frame", "camera_link"]
     )
 
-    # RGBD Odometry
-
-    # Create Map node
+    # RGBD Odometry and Map node
+    node_rtabmap = node(
+        package='raptor_robot_v2',
+        executable='rtabmap.launch.py',
+        output='screen'
+    )
 
     # RViz Node
     node_rviz = Node(
@@ -66,10 +69,9 @@ def generate_launch_description():
             'use_sim_time',
             default_value='false',
             description='Use sim time if true'),
-        # RGBD Odom
-        # map
         node_robot_state_publisher
         node_d435i_camera
         tf_imu_camera
-        node_rviz
+        node_rtabmap
+        # node_rviz
     ])
