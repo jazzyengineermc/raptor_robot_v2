@@ -40,6 +40,13 @@ def generate_launch_description():
         output='screen'
     )
 
+    # IMU filter node
+    tf_imu_camera = Node(
+        package = "tf2_ros",
+        executable = "static_transform_publisher",
+        arguments = ["0.0","0.0","0.0","0.0","0.0","0.0" ,"camera_imu_optical_frame", "camera_link"]
+    )
+
     # RGBD Odometry
 
     # Create Map node
@@ -63,5 +70,6 @@ def generate_launch_description():
         # map
         node_robot_state_publisher
         node_d435i_camera
+        tf_imu_camera
         node_rviz
     ])
