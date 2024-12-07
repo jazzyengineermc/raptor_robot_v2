@@ -5,13 +5,13 @@
      Make sure to disable the IR emitter or put a tape on the IR emitter to
      avoid VINS tracking the fixed IR points (that would cause large drifts) -->
 
-<arg name="rtabmap_viz" default="true"/>
-<arg name="rviz"       default="false"/>
+<arg name="rtabmap_viz" default="false"/>
+<arg name="rviz"       default="true"/>
 <arg name="depth_mode" default="true"/>
 <arg name="odom_strategy" default="9"/> <!-- default VINS -->
 <arg name="unite_imu_method" default="copy"/> <!-- "copy" or "linear_interpolation" -->
 
-<include file="$(find realsense2_camera)/launch/rs_camera.launch">
+<include file="$(find realsense2_camera)/launch/rs_launch.py">
    <arg name="align_depth"   value="$(arg depth_mode)"/>
    <arg name="unite_imu_method" value="$(arg unite_imu_method)"/>
    <arg name="enable_gyro"   value="true"/>
