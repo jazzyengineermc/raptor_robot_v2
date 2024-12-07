@@ -59,7 +59,7 @@ configurable_parameters = [{'name': 'camera_name',                  'default': '
                            {'name': 'enable_rgbd',                  'default': 'true', 'description': "'enable rgbd topic'"},
                            {'name': 'enable_gyro',                  'default': 'true', 'description': "'enable gyro stream'"},
                            {'name': 'enable_accel',                 'default': 'true', 'description': "'enable accel stream'"},
-                           {'name': 'gyro_fps',                     'default': '100', 'description': "''"},
+                           {'name': 'gyro_fps',                     'default': '200', 'description': "''"},
                            {'name': 'accel_fps',                    'default': '200', 'description': "''"},
                            {'name': 'unite_imu_method',             'default': "1", 'description': '[0-None, 1-copy, 2-linear_interpolation]'},
                            {'name': 'clip_distance',                'default': '-2.', 'description': "''"},
