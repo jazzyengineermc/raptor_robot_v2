@@ -398,9 +398,9 @@ def generate_launch_description():
         # Arguments
         DeclareLaunchArgument('stereo', default_value='false', description='Use stereo input instead of RGB-D.'),
 
-        DeclareLaunchArgument('localization', default_value='false', description='Launch in localization mode.'),
-        DeclareLaunchArgument('rtabmap_viz',  default_value='true',  description='Launch RTAB-Map UI (optional).'),
-        DeclareLaunchArgument('rviz',         default_value='false', description='Launch RVIZ (optional).'),
+        DeclareLaunchArgument('localization', default_value='true', description='Launch in localization mode.'),
+        DeclareLaunchArgument('rtabmap_viz',  default_value='false',  description='Launch RTAB-Map UI (optional).'),
+        DeclareLaunchArgument('rviz',         default_value='true', description='Launch RVIZ (optional).'),
 
         DeclareLaunchArgument('use_sim_time', default_value='false', description='Use simulation (Gazebo) clock if true'),
 
@@ -437,9 +437,9 @@ def generate_launch_description():
         DeclareLaunchArgument('approx_sync_max_interval',  default_value='0.0', description='(sec) 0 means infinite interval duration (used with approx_sync=true)'),
 
         # RGB-D related topics
-        DeclareLaunchArgument('rgb_topic',           default_value='/camera/rgb/image_rect_color',       description=''),
-        DeclareLaunchArgument('depth_topic',         default_value='/camera/depth_registered/image_raw', description=''),
-        DeclareLaunchArgument('camera_info_topic',   default_value='/camera/rgb/camera_info',            description=''),
+        DeclareLaunchArgument('rgb_topic',           default_value='/d435i/camera/aligned_depth_to_color/image_raw',       description=''),
+        DeclareLaunchArgument('depth_topic',         default_value='/d435i/camera/depth/image_rect_raw', description=''),
+        DeclareLaunchArgument('camera_info_topic',   default_value='/d435i/camera/aligned_depth_to_color/camera_info',            description=''),
         
         # Stereo related topics
         DeclareLaunchArgument('stereo_namespace',        default_value='/stereo_camera', description=''),
@@ -449,10 +449,10 @@ def generate_launch_description():
         DeclareLaunchArgument('right_camera_info_topic', default_value=[LaunchConfiguration('stereo_namespace'), '/right/camera_info'], description=''),
         
         # Use Pre-sync RGBDImage format
-        DeclareLaunchArgument('rgbd_sync',        default_value='false',      description='Pre-sync rgb_topic, depth_topic, camera_info_topic.'),
+        DeclareLaunchArgument('rgbd_sync',        default_value='true',      description='Pre-sync rgb_topic, depth_topic, camera_info_topic.'),
         DeclareLaunchArgument('approx_rgbd_sync', default_value='true',       description='false=exact synchronization.'),
         DeclareLaunchArgument('subscribe_rgbd',   default_value=LaunchConfiguration('rgbd_sync'), description='Already synchronized RGB-D related topic, e.g., with rtabmap_sync/rgbd_sync nodelet.'),
-        DeclareLaunchArgument('rgbd_topic',       default_value='rgbd_image', description=''),
+        DeclareLaunchArgument('rgbd_topic',       default_value='/d435i/camera/rgbd', description=''),
         DeclareLaunchArgument('depth_scale',      default_value='1.0',        description=''),
         
         # Image topic compression
@@ -482,7 +482,7 @@ def generate_launch_description():
         DeclareLaunchArgument('odom_guess_min_rotation',    default_value='0.0',   description=''),
         
         # imu
-        DeclareLaunchArgument('imu_topic',        default_value='/imu/data', description='Used with VIO approaches and for SLAM graph optimization (gravity constraints).'),
+        DeclareLaunchArgument('imu_topic',        default_value='/d435i/camera/imu', description='Used with VIO approaches and for SLAM graph optimization (gravity constraints).'),
         DeclareLaunchArgument('wait_imu_to_init', default_value='false',     description=''),
         
         # User Data
