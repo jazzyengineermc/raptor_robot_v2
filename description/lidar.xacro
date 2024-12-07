@@ -4,14 +4,14 @@
     <joint name="laser_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_frame"/>
-        <origin xyz="0.72 0 0.28" rpy="0 0 0"/>
+        <origin xyz="0.72 0 0.22" rpy="0 0 0"/>
     </joint>
 
     <link name="laser_frame">
         <visual>
             <geometry>
-                <box size="0.1 0.1 0.1"/>
-				<!-- <mesh filename="rplidar.dae" scale="0.001 0.001 0.001" /> -->
+                <cylinder radius="0.05" length="0.04"/>
+				<!-- <mesh filename="rplidar_a1.dae" scale="0.001 0.001 0.001" /> -->
             </geometry>
             <material name="black"/>
         </visual>
