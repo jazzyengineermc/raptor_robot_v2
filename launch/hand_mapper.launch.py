@@ -30,7 +30,7 @@ def generate_launch_description():
     )
 
     # Create RealSense d435i Camera node
-    node_d435i_camera = node(
+    node_d435i_camera = Node(
         package='raptor_robot_v2',
         executable='rs_launch.py',
         output='screen'
@@ -44,7 +44,7 @@ def generate_launch_description():
     )
 
     # RGBD Odometry and Map node
-    node_rtabmap = node(
+    node_rtabmap = Node(
         package='raptor_robot_v2',
         executable='rtabmap.launch.py',
         output='screen'
