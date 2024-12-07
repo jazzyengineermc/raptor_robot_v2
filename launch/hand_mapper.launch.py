@@ -44,7 +44,7 @@ def generate_launch_description():
     tf_imu_camera = Node(
         package = "tf2_ros",
         executable = "static_transform_publisher",
-        arguments = ["0.0","0.0","0.0","0.0","0.0","0.0" ,"camera_imu_optical_frame", "camera_link"]
+        arguments = ["0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "camera_imu_optical_frame", "camera_link"]
     )
 
     # RGBD Odometry and Map node
@@ -69,9 +69,9 @@ def generate_launch_description():
             'use_sim_time',
             default_value='false',
             description='Use sim time if true'),
-        node_robot_state_publisher
-        node_d435i_camera
-        tf_imu_camera
+        node_robot_state_publisher,
+        node_d435i_camera,
+        tf_imu_camera,
         node_rtabmap
         # node_rviz
     ])
