@@ -1,7 +1,3 @@
-#
-# ros2 launch raptor_robot_v2 rs_launch.py 
-#
-######################
 import os
 
 from ament_index_python.packages import get_package_share_directory
