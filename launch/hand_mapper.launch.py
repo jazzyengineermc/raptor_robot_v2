@@ -1,6 +1,5 @@
 #
-# ros2 launch realsense2_camera rs_launch.py pointcloud.enable:=true enable_gyro:=true enable_accel:=true publish_tf:=true
-# ros2 launch realsense2_camera rs_launch.py config_file:="/full/path/to/config/file"  ---  config/rs435i_config.yaml
+# ros2 launch raptor_robot_v2 rs_launch.py 
 #
 ######################
 import os
@@ -34,6 +33,25 @@ def generate_launch_description():
         parameters=[params]
     )
 
+    # Create RealSense d435i Camera node
+    node_d435i_camera = node(
+        package='raptor_robot_v2',
+        executable='rs_launch.py',
+        output='screen'
+    )
+
+    # RGBD Odometry
+
+    # Create Map node
+
+    # RViz Node
+    node_rviz = Node(
+        package='rviz2',
+        namespace='',
+        executable='rviz2',
+        name='rviz2',
+        arguments=['-d', 'config/hhmapper.rviz']
+    )
 
     # Launch!
     return LaunchDescription([
@@ -41,6 +59,9 @@ def generate_launch_description():
             'use_sim_time',
             default_value='false',
             description='Use sim time if true'),
-
+        # RGBD Odom
+        # map
         node_robot_state_publisher
+        node_d435i_camera
+        node_rviz
     ])
