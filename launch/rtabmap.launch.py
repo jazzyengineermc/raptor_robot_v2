@@ -452,7 +452,7 @@ def generate_launch_description():
         DeclareLaunchArgument('rgbd_sync',        default_value='true',      description='Pre-sync rgb_topic, depth_topic, camera_info_topic.'),
         DeclareLaunchArgument('approx_rgbd_sync', default_value='true',       description='false=exact synchronization.'),
         DeclareLaunchArgument('subscribe_rgbd',   default_value=LaunchConfiguration('rgbd_sync'), description='Already synchronized RGB-D related topic, e.g., with rtabmap_sync/rgbd_sync nodelet.'),
-        DeclareLaunchArgument('rgbd_topic',       default_value='/d435i/camera/rgbd', description=''),
+        DeclareLaunchArgument('rgbd_topic',       default_value='/d435i/camera/aligned_depth_to_color/image_raw', description=''),
         DeclareLaunchArgument('depth_scale',      default_value='1.0',        description=''),
         
         # Image topic compression
