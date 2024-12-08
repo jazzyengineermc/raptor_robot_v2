@@ -68,6 +68,6 @@ def generate_launch_description():
         node_robot_state_publisher,
         node_d435i_camera,
         tf_imu_camera,
-        node_rtabmap
+        node_rtabmap,
         # node_rviz
     ])
