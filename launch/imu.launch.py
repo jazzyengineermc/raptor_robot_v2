@@ -20,7 +20,7 @@ def generate_launch_description():
                 name='imu_filter',
                 output='screen',
                 remappings=[
-                    ('/imu/data_raw', '/d435i/camera/imu'),
+                    ('imu/data_raw', '/d435i/camera/imu'),
                     #('/output/cmd_vel', '/turtlesim2/turtle1/cmd_vel'),
                 ],
                 #parameters=[os.path.join(config_dir, 'imu_filter.yaml')],
