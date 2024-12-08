@@ -398,7 +398,7 @@ def generate_launch_description():
         # Arguments
         DeclareLaunchArgument('stereo', default_value='false', description='Use stereo input instead of RGB-D.'),
 
-        DeclareLaunchArgument('localization', default_value='true', description='Launch in localization mode.'),
+        DeclareLaunchArgument('localization', default_value='false', description='Launch in localization mode.'),
         DeclareLaunchArgument('rtabmap_viz',  default_value='false',  description='Launch RTAB-Map UI (optional).'),
         DeclareLaunchArgument('rviz',         default_value='true', description='Launch RVIZ (optional).'),
 
