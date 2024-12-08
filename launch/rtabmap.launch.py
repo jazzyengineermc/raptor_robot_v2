@@ -438,8 +438,8 @@ def generate_launch_description():
 
         # RGB-D related topics
         DeclareLaunchArgument('rgb_topic',           default_value='/d435i/camera/color/image_raw',       description=''),
-        DeclareLaunchArgument('depth_topic',         default_value='/d435i/camera/depth/image_rect_raw', description=''),
-        DeclareLaunchArgument('camera_info_topic',   default_value='/d435i/camera/color/camera_info',            description=''),
+        DeclareLaunchArgument('depth_topic',         default_value='/d435i/camera/aligned_depth_to_color/image_raw', description=''),
+        DeclareLaunchArgument('camera_info_topic',   default_value='/d435i/camera/depth/camera_info',            description=''),
         
         # Stereo related topics
         DeclareLaunchArgument('stereo_namespace',        default_value='/stereo_camera', description=''),
