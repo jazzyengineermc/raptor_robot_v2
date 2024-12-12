@@ -18,6 +18,10 @@ def generate_launch_description():
                 name='imu_filter',
                 output='screen',
                 parameters=[os.path.join(config_dir, 'imu_filter.yaml')],
+                remappings=[
+                    # ('/d435i/camera/imu', '/imu/data_raw')
+                    ('/imu_6050_data_raw', '/imu/data_raw')
+                ]
             )
         ]
     )
