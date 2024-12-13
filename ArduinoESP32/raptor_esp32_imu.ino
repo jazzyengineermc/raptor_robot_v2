@@ -93,6 +93,8 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
     sensors_event_t a, g, temp;
     mpu.getEvent(&a, &g, &temp);
 
+    imu_msg.header.frame_id = "imu_link";
+
     imu_msg.linear_acceleration.x = a.acceleration.x;
     imu_msg.linear_acceleration.y = a.acceleration.y;
     imu_msg.linear_acceleration.z = a.acceleration.z;
