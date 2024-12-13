@@ -298,7 +298,7 @@ def main(args=None):
         time.sleep(0.01)
 
 
-    tk.mainloop()
+    Tk.mainloop()
     face_player.destroy_node()
     rclpy.shutdown()
 
