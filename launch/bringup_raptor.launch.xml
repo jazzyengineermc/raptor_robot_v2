@@ -1,0 +1,22 @@
+
+<launch>
+
+  <!-- include another launch file -->
+  <include file="$(find-pkg-share raptor_robot_v2)/launch/rsp.launch.py"/>
+  <node pkg="joint_state_publisher" exec="joint_state_publisher" name="jsp"> 
+  </node>
+  <node pkg="micro_ros_agent" exec="micro_ros_agent" name="raptor_esp32"> 
+    <param name="transport" type="string" value="serial" />
+    <param name="dev" type="string" value="/dev/ttyUSB0" />  
+    <param name="baudrate" type="int" value="115200" />
+  </node> 
+  <!-- 
+  <node pkg="" exec="" name=""> 
+  </node>
+  -->
+  <!-- perform remap so both turtles listen to the same command topic
+  <node pkg="turtlesim" exec="mimic" name="mimic">
+    <remap from="/input/pose" to="/turtlesim1/turtle1/pose"/>
+    <remap from="/output/cmd_vel" to="/turtlesim2/turtle1/cmd_vel"/>
+  </node> -->
+</launch>
