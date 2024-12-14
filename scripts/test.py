@@ -1,17 +1,66 @@
 import tkinter as tk
+import time
 from play_face_cars import FacePlayerCars
 
-# Create the main window
-window = tk.Tk()
-window.title("Hello World")
-window.geometry("1024x600+0+0")
-window.rowconfigure(0, weight=1)
-window.columnconfigure(0, weight=1)
+class RaptorFaceApp:
+    def __init__(self, master):
+        # Configure
+        #self.disable_cursor = True
+        self.fullscreen = False
+        self.blink = True
+        
+        # Create the main window
+        self.master = master
+        master.title("Raptor")
+        master.geometry("1024x600+0+0")
+        master.rowconfigure(0, weight=1)
+        master.columnconfigure(0, weight=1)
+        
+        if self.fullscreen:
+            master.bind("<Escape>", self.end_fullscreen)
+            master.attributes("-fullscreen",True)
 
-# Create a label widget
-#label = tk.Label(window, text="Hello World!")
-#label.pack()
-FacePlayerCars(window)
+        if self.blink:
+            master.bind("<b>", self.blink_eyes)
+            
+        #if self.disable_cursor:
+        #    self.config(cursor="none")
 
-# Start the GUI event loop
-window.mainloop()
+        self.build_face_page()
+    
+    
+    def destroy_face_page(self):
+        self.face_page.destroy()
+        self.face_page = None
+    
+    
+    def update_image(self):
+
+        if self.face_page:
+            self.face_page.update_image()
+
+        return
+
+
+    def end_fullscreen(self, event=None):
+        self.master.attributes("-fullscreen", False)
+        return "break"
+
+
+    def build_face_page(self):
+        self.face_page = FacePlayerCars(root)
+    
+    
+    def blink_eyes(self, event=None):
+        self.face_page.update_values(0.0, 1.0)
+        self.update_image()
+        #time.sleep(10)
+        #self.face_page.update_values(0.0, 0.0)
+        #self.update_image()
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = RaptorFaceApp(root)
+    root.mainloop()
+    
