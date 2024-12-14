@@ -10,6 +10,7 @@
     <param name="dev" type="string" value="/dev/ttyUSB0" />  
     <param name="baudrate" type="int" value="115200" />
   </node> 
+  <include file="$(find-pkg-share raptor_robot_v2)/launch/rplidar.launch.py"/>
   <!-- 
   <node pkg="" exec="" name=""> 
   </node>
