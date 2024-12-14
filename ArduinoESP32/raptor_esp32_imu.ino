@@ -82,19 +82,20 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
 {
   RCLC_UNUSED(last_call_time);
   if (timer != NULL) {
-
-    RCSOFTCHECK(rcl_publish(&left_encoder_publisher, &left_encoder_msg, NULL));
-    RCSOFTCHECK(rcl_publish(&right_encoder_publisher, &right_encoder_msg, NULL));
-
-   right_encoder_msg.data = RightEncoderCount;
+    right_encoder_msg.data = RightEncoderCount;
     left_encoder_msg.data = LeftEncoderCount;
 
-    RCSOFTCHECK(rcl_publish(&imu_publisher, &imu_msg, NULL));
     sensors_event_t a, g, temp;
     mpu.getEvent(&a, &g, &temp);
-
-    imu_msg.header.frame_id = "imu_link";
-
+    
+    struct timeval tv;
+    gettimeofday(&tv, NULL);
+    
+    imu_msg.header.frame_id.data = (char*)"imu_frame";
+    imu_msg.header.frame_id.size = 9;
+    imu_msg.header.stamp.sec = (int64_t)tv.tv_sec;
+    imu_msg.header.stamp.nanosec = (int64_t)tv.tv_usec;
+    
     imu_msg.linear_acceleration.x = a.acceleration.x;
     imu_msg.linear_acceleration.y = a.acceleration.y;
     imu_msg.linear_acceleration.z = a.acceleration.z;
@@ -102,6 +103,11 @@ void timer_callback(rcl_timer_t * timer, int64_t last_call_time)
     imu_msg.angular_velocity.x = a.gyro.x;
     imu_msg.angular_velocity.y = a.gyro.y;
     imu_msg.angular_velocity.z = a.gyro.z;
+
+    RCSOFTCHECK(rcl_publish(&imu_publisher, &imu_msg, NULL));
+    RCSOFTCHECK(rcl_publish(&left_encoder_publisher, &left_encoder_msg, NULL));
+    RCSOFTCHECK(rcl_publish(&right_encoder_publisher, &right_encoder_msg, NULL));
+
   }
 }
 
