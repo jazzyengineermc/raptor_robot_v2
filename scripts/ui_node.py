@@ -26,19 +26,19 @@ class UiNode(Node):
 
         # ROS Interactions
 
-        self.joy_sub = self.create_subscription(
-            Joy,
-            'joy',
-            self.joy_callback,
-            10)
-        self.joy_sub  # prevent unused variable warning
+        #self.joy_sub = self.create_subscription(
+        #    Joy,
+        #    'joy',
+        #    self.joy_callback,
+        #    10)
+        #self.joy_sub  # prevent unused variable warning
 
-        self.cmd_sub = self.create_subscription(
-            Twist,
-            'cmd_vel',
-            self.cmd_vel_callback,
-            10)
-        self.cmd_sub  # prevent unused variable warning
+        #self.cmd_sub = self.create_subscription(
+        #    Twist,
+        #    'cmd_vel',
+        #    self.cmd_vel_callback,
+        #    10)
+        #self.cmd_sub  # prevent unused variable warning
 
         self.motor_start = self.create_client(Empty, 'start_motor')
         if not self.motor_start.wait_for_service(timeout_sec=1.0):
