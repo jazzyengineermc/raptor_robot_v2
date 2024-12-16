@@ -11,7 +11,7 @@
                 <param name="device">/dev/ttyUSB0</param>
                 <param name="baud_rate">57600</param>
                 <param name="timeout">1000</param>
-                <param name="enc_counts_per_rev">3436</param>
+                <param name="enc_counts_per_rev">10460</param>
             </hardware>
             <joint name="left_wheel_joint">
                 <command_interface name="velocity">
@@ -55,12 +55,12 @@
             </joint>
         </ros2_control>
     </xacro:if>
-<!-- 
+ 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
             <parameters>$(find raptor_robot_v2)/config/my_controllers.yaml</parameters>
             <parameters>$(find raptor_robot_v2)/config/gaz_ros2_ctl_use_sim.yaml</parameters>
         </plugin>
     </gazebo>
- -->
+
 </robot>
