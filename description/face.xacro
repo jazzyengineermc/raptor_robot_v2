@@ -30,7 +30,7 @@
             <geometry>
                 <cylinder radius="0.05" length="0.02"/>
             </geometry>
-            <material name="red"/>
+            <material name="black"/>
         </visual>
     </link>
 
