@@ -31,7 +31,7 @@ diff_cont:
     odom_frame_id: odom
     pose_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
     twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
-    # open_loop: true
+    open_loop: true
     enable_odom_tf: true
 
     cmd_vel_timeout: 0.5
@@ -40,27 +40,27 @@ diff_cont:
     
 
     linear.x.has_velocity_limits: true
-    linear.x.max_velocity: 1.0
+    linear.x.max_velocity: 1.5
     linear.x.min_velocity: -1.0
 
-    # linear.x.has_acceleration_limits: false
-    # linear.x.max_acceleration: NAN
-    # linear.x.min_acceleration: NAN
+    linear.x.has_acceleration_limits: true
+    linear.x.max_acceleration: 1.0
+    linear.x.min_acceleration: -1.0
     
-    # linear.x.has_jerk_limits: false
-    # linear.x.max_jerk: NAN
+    # linear.x.has_jerk_limits: true
+    # linear.x.max_jerk: 5.0
     # linear.x.min_jerk: NAN
 
     angular.z.has_velocity_limits: true
-    angular.z.max_velocity: 1.0
-    angular.z.min_velocity: -1.0
+    angular.z.max_velocity: 1.5
+    angular.z.min_velocity: -1.5
 
-    # angular.z.has_acceleration_limits: false
-    # angular.z.max_acceleration: NAN
-    # angular.z.min_acceleration: NAN
+    angular.z.has_acceleration_limits: true
+    angular.z.max_acceleration: 1.0
+    angular.z.min_acceleration: -1.0
 
-    # angular.z.has_jerk_limits: false
-    # angular.z.max_jerk: NAN
+    # angular.z.has_jerk_limits: true
+    # angular.z.max_jerk: 2.5
     # angular.z.min_jerk: NAN
 
 
