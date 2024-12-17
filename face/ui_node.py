@@ -7,8 +7,8 @@ from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
 from std_srvs.srv import Empty
 
-from face.play_face_cars import FacePlayerCars
-from face.button_page import ButtonPage
+from play_face_cars import FacePlayerCars
+from button_page import ButtonPage
 
 
 class UiNode(Node):
