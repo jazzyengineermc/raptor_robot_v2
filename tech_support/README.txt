@@ -1,5 +1,9 @@
 Tech Support
     after installation is complete you can drive raptor around in gazebo simulator  :)
+    the wheelchair picture is what I turned into 'Raptor'. I first removed all existing electronics and brakes from the motors
+    made brackets to hold quadrature encoders driven via a belt drive on the back of the motor giving me a whopping 42k ticks per wheel rev. Mega resolution!!
+    arduino nano and 2 IBT-2 motor driver boards drive it using 18v cordless drill batteries.
+    The main robot base is running on a Raspberry Pi 4b 8g model with a m.2 250g ssd via USB3 port
 
 Ubuntu 22.04 -- unless you know what your doing, trying to be beginner friendly
 
@@ -21,14 +25,14 @@ e reports back wheel encoder counts
 o <n> <n> sets a PWM pulse to the wheels # <n> should be 0 - 255
 
 mkdir ~/bin
-echo "export PATH=$PATH:~/bin" >> ~/.bashrc
+echo "export PATH=$PATH:/home/${whoami}/bin" >> ~/.bashrc
 source ~/.bashrc
-cp <path to>ros2-robot-installer.sh ~/bin
-chmod 755 ~/bin/ros2-robot-installer.sh
+cp ~/dev_ws/src/raptor_robot_v2/tech_support/robot-installer.sh ~/bin
+chmod 755 ~/bin/robot-installer.sh
 
 from now on you can run:
-    "ros2-robot-installer.sh robot" to get the latest robot code"
-    "ros2-robot-installer.sh ros2" to install ros-humble and all packages needed
+    "robot-installer.sh robot" to get the latest robot code"
+    "robot-installer.sh ros2" to install ros-humble and all packages needed
 
 optional addons:
     cd ~/dev_ws/src && git clone https://github.com/jazzyengineermc/raptor_v2_ui.git  # for digital eyes :)
