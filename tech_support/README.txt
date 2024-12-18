@@ -38,4 +38,5 @@ optional addons:
     cd ~/dev_ws/src && git clone https://github.com/jazzyengineermc/raptor_v2_ui.git  # for digital eyes :)
     camera gear for openCV related development # RealSense d435i camera is what I use and webcam
     audio gear for speach-to-speech commands # I use stereo mic from webcam and usb soundcard w/ speakers
-    robot arm for object manipulation # I don't have one... yet ;)
+    rtk-gps # Believe me it's on my 2025 wishlist to add to the project for outdoor operations
+    robot arm for object manipulation # I don't have one... yet ;) but it's a long term goal
