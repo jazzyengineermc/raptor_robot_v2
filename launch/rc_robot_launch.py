@@ -79,11 +79,7 @@ def generate_launch_description():
         )
     )
     
-    face_spawner = Node(
-        package="raptor_robot_v2",
-        executable="test.py",
-        output="screen",
-    )
+    face_spawner = Command(['ros2 run raptor_robot_v2 test.py'])
 
     # Launch them all!
     return LaunchDescription([
