@@ -19,7 +19,7 @@ class UiNode(Node):
 
         # Configuration
 
-        self.use_cmd_vel_for_face = True
+        self.use_cmd_vel_for_face = False
         self.disable_cursor = True
         self.fullscreen = False
 
@@ -100,7 +100,7 @@ class UiNode(Node):
             self.button_page.process_joy(joy_vals)
 
         if self.face_page and not self.use_cmd_vel_for_face:
-            self.face_page.update_values(joy_vals.axes[0], abs(joy_vals.axes[1]))
+            self.face_page.update_values(joy_vals.axes[3], abs(joy_vals.axes[1]))
 
         if self.button_page and joy_vals.buttons[8]:
             self.destroy_button_page()
