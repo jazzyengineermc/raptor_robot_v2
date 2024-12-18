@@ -1,6 +1,6 @@
 import tkinter as tk
 import time
-from face.play_face_cars import FacePlayerCars
+from play_face_cars import FacePlayerCars
 
 class RaptorFaceApp:
     def __init__(self, master):
