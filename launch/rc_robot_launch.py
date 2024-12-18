@@ -79,7 +79,9 @@ def generate_launch_description():
         )
     )
     
-    face_spawner = Command(['ros2 run raptor_robot_v2 test.py'])
+    face_spawner = Command(
+        ['/home/jreide/dev_ws/src/raptor_robot_v2/test.py']
+    )
 
     # Launch them all!
     return LaunchDescription([
