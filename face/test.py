@@ -6,7 +6,7 @@ class RaptorFaceApp:
     def __init__(self, master):
         # Configure
         #self.disable_cursor = True
-        self.fullscreen = False
+        self.fullscreen = True
         self.blink = True
         
         # Create the main window
@@ -19,6 +19,7 @@ class RaptorFaceApp:
         if self.fullscreen:
             master.bind("<Escape>", self.end_fullscreen)
             master.attributes("-fullscreen",True)
+            master.bind("<f>", self.goto_fullscreen)
 
         if self.blink:
             master.bind("<b>", self.blink_eyes)
@@ -44,6 +45,11 @@ class RaptorFaceApp:
 
     def end_fullscreen(self, event=None):
         self.master.attributes("-fullscreen", False)
+        return "break"
+
+
+    def goto_fullscreen(self, event=None):
+        self.master.attributes("-fullscreen", True)
         return "break"
 
 
