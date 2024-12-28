@@ -20,12 +20,12 @@ tar -xvf <path to>diffdrive_arduino.tar
 
 cd ~/dev_ws && colcon build --symlink-install
 
-use minicom -b 57600 /dev/ttyUSB0  # or your arduino device path
-e reports back wheel encoder counts
+use minicom -b 57600 -D /dev/ttyUSB0  # or your arduino device path
+e reports back wheel encoder counts # you will need to know the number of encoder ticks for 1 revolution
 o <n> <n> sets a PWM pulse to the wheels # <n> should be 0 - 255
 
 mkdir ~/bin
-echo "export PATH=$PATH:/home/${whoami}/bin" >> ~/.bashrc
+echo "export PATH=$PATH:/home/$UID/bin" >> ~/.bashrc
 source ~/.bashrc
 cp ~/dev_ws/src/raptor_robot_v2/tech_support/robot-installer.sh ~/bin
 chmod 755 ~/bin/robot-installer.sh
