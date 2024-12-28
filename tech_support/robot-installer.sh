@@ -7,7 +7,7 @@
 case "$1" in
   "sudo")
     echo "Adding you to sudoers so you won't have to always type in sudo password..."
-    sudo echo "${whoami} ALL=(ALL:ALL)   NOPASSWD:ALL" >> /etc/sudoers.d/${whoami}-user
+    sudo echo "$UID ALL=(ALL:ALL)   NOPASSWD:ALL" >> /etc/sudoers.d/$UID-user
     echo "Now log out and log back in for settings to take effect."
     ;;
   "gazebo")
@@ -37,7 +37,7 @@ case "$1" in
     sudo apt install ros-humble-desktop ros-dev-tools -y
     echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
     source .bashrc
-    sudo apt install ros-humble-nav2 ros-humble-nav2 ros-humble-nav2-rviz-plugins ros-humble-rplidar-ros -y
+    sudo apt install ros-humble-nav2 ros-humble-nav2 ros-humble-nav2-rviz-plugins ros-humble-rplidar-ros ros-humble-ament*-y
     sudo apt install joint-state-publisher-gui ros-humble-ros2-control ros-humble-usb-cam ros-humble-xacro -y
     sudo apt install ros-humble-twist-mux ros-humble-ros2-controllers ros-humble-nav2-amcl ros-humble-slam-toolbox -y
     cd ~/
