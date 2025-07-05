@@ -51,7 +51,7 @@ case "$1" in
     mkdir -p ~/dev_ws/src # in case it's not there
     cd ~/dev_ws/src
     rm -rf raptor_robot_v2 # I know it's tradgic, but trust me it gets better
-    git clone https://github.com/jazzyengineermc/raptor_robot_v2.git # See, I told you so...
+    git clone --branch Niagra https://github.com/jazzyengineermc/raptor_robot_v2.git # See, I told you so...
     cd ~/dev_ws && colcon build --symlink-install
     echo "Your robot awaits you"
     echo "source install/setup.bash"
