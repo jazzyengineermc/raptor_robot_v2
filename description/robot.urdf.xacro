@@ -7,7 +7,7 @@
 
     <!-- Basic  Bot -->
     <xacro:include filename="robot_core.xacro" />
-    <xacro:include filename="face.xacro" />
+    <!-- <xacro:include filename="face.xacro" /> -->
 
     <!-- Control stuffs -->
     <xacro:if value="$(arg use_ros2_control)">
@@ -18,7 +18,7 @@
     </xacro:unless>
     
     <!-- Sensors -->
-    <xacro:include filename="lidar.xacro" />
+    <!-- <xacro:include filename="lidar.xacro" /> -->
 
     <!-- <xacro:include filename="camera.xacro" />
     <xacro:include filename="depth_camera.xacro" /> -->
